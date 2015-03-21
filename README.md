@@ -25,3 +25,4 @@ Might look like this:
     git config --global user.name "$GIT_AUTHOR_NAME"
     git config --global user.email "$GIT_AUTHOR_EMAIL"
 
+_Big ups to [Mathias Bynens](https://mathiasbynens.be/) and his [dotfiles repository](https://github.com/mathiasbynens/dotfiles). Check [https://dotfiles.github.io] for more about dotfiles._

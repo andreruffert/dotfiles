@@ -3,13 +3,13 @@
 ## Installation
 
 ````
-git clone https://github.com/andreruffert/dotfiles.git && cd dotfiles && source install.sh
+git clone https://github.com/andreruffert/dotfiles.git && cd dotfiles && source scripts/install.sh
 ````
 
 ## Update
 ````
-cd dotfiles 
-source install.sh
+cd dotfiles
+source scripts/install.sh
 ````
 
 ## Customizations

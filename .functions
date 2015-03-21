@@ -1,0 +1,74 @@
+# Generate a random string
+function random() {
+    local length=${1:-6}
+    openssl rand -base64 "${length}"
+}
+
+# Create a new directory and enter it
+function mkd() {
+    mkdir -p "$@" && cd "$@"
+}
+
+# Start a quick webserver from any directory
+function serve() {
+    python -m SimpleHTTPServer ${1:-8080}
+}
+
+# Who is listening on a given TCP port
+function port() {
+    lsof -n -i4TCP:${1:-8080} | grep LISTEN
+}
+
+# Create a data URL from a file
+function dataurl() {
+    local mimeType=$(file -b --mime-type "$1");
+    if [[ $mimeType == text/* ]]; then
+        mimeType="${mimeType};charset=utf-8";
+    fi
+    echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
+}
+
+# `s` with no arguments opens the current directory in Sublime Text, otherwise
+# opens the given location
+function s() {
+    if [ $# -eq 0 ]; then
+        subl .;
+    else
+        subl "$@";
+    fi;
+}
+
+# `o` with no arguments opens the current directory, otherwise opens the given
+# location
+function o() {
+    if [ $# -eq 0 ]; then
+        open .;
+    else
+        open "$@";
+    fi;
+}
+
+# Easily creates a Brewfile
+# http://robots.thoughtbot.com/brew-leaves
+function brewfile() {
+    brew leaves | sed 's/^/brew install /' | sed 's/$/ 2> \/dev\/null/' > brewfile
+
+    # List line count
+    wc -l brewfile
+
+    # List first 3 entrys
+    #head -3 Brewfile
+    #echo "..."
+}
+
+# Easily creates a Caskfile
+function caskfile() {
+    brew cask list | sed 's/^/brew cask install /' | sed 's/$/ 2> \/dev\/null/' > caskfile
+
+    # List line count
+    wc -l caskfile
+
+    # List first 3 entrys
+    #head -3 Brewfile
+    #echo "..."
+}

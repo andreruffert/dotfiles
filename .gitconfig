@@ -1,0 +1,137 @@
+[alias]
+    # http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+
+    # diff
+    d = diff                          # diff unstaged changes
+    dc = diff --cached                # diff staged changes
+    last = diff HEAD^                 # diff last committed change
+
+    # committed on the wrong branch?
+    reset = reset --hard HEAD~1
+
+    c = commit
+
+    # View the current working tree status using the short format
+    s = status -s
+
+    # Remove any remote-tracking branches that have been deleted on the remote repository
+    fp = fetch --prune
+
+    # stash
+    ss = stash                        # stash changes
+    sl = stash list                   # list stashes
+    sa = stash apply                  # apply stash (restore changes)
+    sd = stash drop                   # drop stashes (destory changes)
+
+    ##
+    # Switch to a branch
+    #
+    # @param <branchName>
+    ##
+    co = checkout
+
+    ##
+    # Cherry picking
+    #
+    # @param <SHA>
+    ##
+    cp  = cherry-pick
+    cpx = cherry-pick -x
+
+    ##
+    # Create a new feature branch
+    #
+    # @param <newBranch>
+    # @param <fromBranch> OPTIONAL
+    ##
+    nb = "!f() { newBranch=${1-new-branch}; fromBranch=$2; git checkout -b $newBranch $fromBranch; }; f"
+
+    ##
+    # Rename the current branch
+    #
+    # @param <newName>
+    ##
+    rb = "!f() { git branch -m $1; }; f"
+
+    ##
+    # Tick a branch and mark it as done
+    # Rename <branchName> to done-<branchName>
+    #
+    # @param <branchName> OPTIONAL default is current branch
+    ##
+    tb = "!f() { branchName=$(git rev-parse --abbrev-ref HEAD); git branch -m ${1-$branchName} done-${1-$branchName}; }; f"
+
+    ##
+    # Delete a LOCAL branch
+    #
+    # @param <branchName>
+    ##
+    dlb = "!f() { git branch -d $1; }; f"
+
+    ##
+    # Delete a REMOTE branch
+    #
+    # @param <branchName>
+    ##
+    drb = "!f() { git push origin :$1; }; f"
+
+    # View abbreviated SHA, description, and history graph of the latest 20 commits
+    #l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    l = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+    branches = branch -va
+    remotes = remote -v
+
+    # List contributors with number of commits
+    contributors = shortlog --summary --numbered
+
+    # list aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+
+[color]
+    branch = auto
+    diff = auto
+    ui = true
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[format]
+    pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
+
+[core]
+	editor = subl -n -w
+	excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
+
+[diff]
+    tool = opendiff
+
+[merge]
+    log = true
+	tool = opendiff
+
+[help]
+    # Automatically correct and execute mistyped commands
+    autocorrect = 1
+
+[include]
+    path = ~/.gitconfig_local
+
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[user]
+	name = André Ruffert
+	email = andre@andreruffert.com

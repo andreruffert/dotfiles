@@ -1,0 +1,6 @@
+# Link Homebrew casks in `/Applications` rather than `~/Applications`
+export HOMEBREW_CASK_OPTS="--appdir=/Applications";
+
+# Use Sublime Text as the editor for many commands that prompt for input
+# -w will cause the subl command to not exit until the file is closed
+export EDITOR='subl -w'

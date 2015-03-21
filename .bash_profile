@@ -1,6 +1,6 @@
 # Add `~/bin` & `local` to the `$PATH`
 # Homebrew installs under local.
-export PATH="./bin:/usr/local/bin:$PATH"
+export PATH="~/bin:/usr/local/bin:$PATH"
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"

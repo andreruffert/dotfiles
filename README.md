@@ -20,7 +20,7 @@ You can use this to add a few custom commands without the need to fork this enti
 Might look like this:
 
 	GIT_AUTHOR_NAME="André Ruffert"
-    GIT_AUTHOR_EMAIL="andre@andreruffert.com"
+    GIT_AUTHOR_EMAIL="your@mail.com"
 
     git config --global user.name "$GIT_AUTHOR_NAME"
     git config --global user.email "$GIT_AUTHOR_EMAIL"

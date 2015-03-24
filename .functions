@@ -30,7 +30,7 @@ function dataurl() {
 
 # Put a file on my Desktop with the filename given
 function todo() {
-    touch ~/Desktop/"$@"
+    touch ~/Desktop/"$*"
 }
 
 # `s` with no arguments opens the current directory in Sublime Text, otherwise

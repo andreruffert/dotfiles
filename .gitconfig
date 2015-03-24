@@ -92,6 +92,9 @@
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
 
+    # keep the file but remove it from the index
+    rmc = "!f() { git rm --cached $1; }; f"
+
 [color]
     branch = auto
     diff = auto

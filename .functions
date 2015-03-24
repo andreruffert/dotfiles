@@ -28,6 +28,11 @@ function dataurl() {
     echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
 }
 
+# Put a file on my Desktop with the filename given
+function todo() {
+    touch ~/Desktop/"$@"
+}
+
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
 # opens the given location
 function s() {

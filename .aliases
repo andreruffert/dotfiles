@@ -61,11 +61,11 @@ alias la="compgen -a"
 # List all the functions you could run
 alias lfn="compgen -A function"
 
+# Listing globally installed NPM packages and version
+alias lnpm="npm list -g --depth=0"
+
 # Faster npm for Europeans
 command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu/"
-
-# Listing globally installed NPM packages and version
-alias npmlg="npm list -g --depth=0"
 
 # It's like Siri for the command line
 # https://github.com/pickhardt/betty

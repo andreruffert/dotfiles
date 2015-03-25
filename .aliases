@@ -59,7 +59,7 @@ alias reload="source ~/.bash_profile"
 alias la="compgen -a"
 
 # List all the functions you could run
-alias lf="compgen -A function"
+alias lfn="compgen -A function"
 
 # Faster npm for Europeans
 command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu/"

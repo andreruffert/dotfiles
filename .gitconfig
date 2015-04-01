@@ -124,9 +124,6 @@
     # Automatically correct and execute mistyped commands
     autocorrect = 1
 
-[include]
-    path = ~/.gitconfig_local
-
 [filter "media"]
 	required = true
 	clean = git media clean %f
@@ -135,6 +132,3 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
-[user]
-	name = André Ruffert
-	email = andre@andreruffert.com

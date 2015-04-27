@@ -120,10 +120,6 @@
     log = true
 	tool = opendiff
 
-[help]
-    # Automatically correct and execute mistyped commands
-    autocorrect = 1
-
 [filter "media"]
 	required = true
 	clean = git media clean %f

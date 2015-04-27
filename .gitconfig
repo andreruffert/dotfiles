@@ -81,10 +81,10 @@
 
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 
-    # Show verbose output about tags, branches or remotes
-    tags = tag -l
-    branches = branch -va
-    remotes = remote -v
+    # List verbose output about tags, branches or remotes
+    lt = tag -l
+    lb = branch -va
+    lr = remote -v
 
     # List contributors with number of commits
     contributors = shortlog --summary --numbered

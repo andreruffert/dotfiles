@@ -50,6 +50,17 @@ parse_git_dirty () {
 parse_git_branch () {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
+emoji() {
+    ret_val=$?
+    if [ "$ret_val" = "0" ]
+    then
+        # echo 👾 | hexdump -C
+        echo -e "\xf0\x9f\x91\xbe\x0a"
+    else
+        # echo 💥 | hexdump -C
+        echo -e "\xf0\x9f\x92\xa5\x0a ($ret_val)"
+    fi
+}
 
 #Define the sexy-bash-prompt
-PS1="\[${BOLD}${USER_COLOR}\]\u \[$PREPOSITION_COLOR\]@ \[$DEVICE_COLOR\]\h \[$PREPOSITION_COLOR\]in \[$DIR_COLOR\]\w\[$PREPOSITION_COLOR\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$DIR_COLOR\]\$(parse_git_branch)\[$GIT_STATUS_COLOR\]\n\$ \[$RESET\]"
+PS1="\[${BOLD}${USER_COLOR}\]\u \[$PREPOSITION_COLOR\]@ \[$DEVICE_COLOR\]\h \[$PREPOSITION_COLOR\]in \[$DIR_COLOR\]\w\[$PREPOSITION_COLOR\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$DIR_COLOR\]\$(parse_git_branch)\[$GIT_STATUS_COLOR\]\n\$(emoji)  \[$RESET\]"

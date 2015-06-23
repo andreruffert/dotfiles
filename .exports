@@ -1,6 +1,9 @@
+# Use Sublime Text as the editor for many commands that prompt for input
+# -w will cause the subl command to not exit until the file is closed
+export EDITOR='subl -w';
+
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications";
 
-# Use Sublime Text as the editor for many commands that prompt for input
-# -w will cause the subl command to not exit until the file is closed
-export EDITOR='subl -w'
+# Use Homebrew's directories rather than `~/.rbenv`
+export RBENV_ROOT="/usr/local/var/rbenv";

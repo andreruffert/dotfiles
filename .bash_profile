@@ -1,9 +1,5 @@
-# Add `~/bin` & `local` to the `$PATH`
-# Homebrew installs under local.
-export PATH="~/bin:/usr/local/bin:$PATH"
-
-# Link Homebrew casks in `/Applications` rather than `~/Applications`
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
 
 # Load shell dotfiles
 # -r file has read permission

@@ -4,6 +4,8 @@ if test ! $(which rbenv)
 then
   echo "  Installing rbenv for you."
   brew install rbenv > /tmp/rbenv-install.log
+  echo "  Adds `rbenv init` to your shell to enable shims and autocompletion."
+  printf '\n# Enable shims and autocompletion for rbenv\nif which rbenv > /dev/null; then eval "$(rbenv init -)"; fi\n' >> ~/.bash_profile
 fi
 
 if test ! $(which ruby-build)

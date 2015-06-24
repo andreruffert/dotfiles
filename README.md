@@ -20,14 +20,14 @@ You can use this to add a few custom commands without the need to fork this enti
 Might look like this:
 
 	GIT_AUTHOR_NAME="André Ruffert"
-    GIT_AUTHOR_EMAIL="your@mail.com"
+  GIT_AUTHOR_EMAIL="your@mail.com"
 
-    git config --global user.name "$GIT_AUTHOR_NAME"
-    git config --global user.email "$GIT_AUTHOR_EMAIL"
+  git config --global user.name "$GIT_AUTHOR_NAME"
+  git config --global user.email "$GIT_AUTHOR_EMAIL"
 
 ## License
 
 MIT © [André Ruffert](http://andreruffert.com/)
 
-> Big ups to [Mathias Bynens](https://mathiasbynens.be/) and his [dotfiles repository](https://github.com/mathiasbynens/dotfiles).                                          
+> Big ups to [Mathias Bynens](https://mathiasbynens.be/) and his [dotfiles repository](https://github.com/mathiasbynens/dotfiles).
 > Check [https://dotfiles.github.io](https://dotfiles.github.io) for more dotfiles.

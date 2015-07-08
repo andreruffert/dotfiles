@@ -2,15 +2,15 @@
 
 ## Installation
 
-````
+```
 git clone https://github.com/andreruffert/dotfiles.git && cd dotfiles && source scripts/install.sh
-````
+```
 
 ## Update
-````
+```
 cd dotfiles
 source scripts/install.sh
-````
+```
 
 ## Customizations
 
@@ -19,11 +19,13 @@ You can use this to add a few custom commands without the need to fork this enti
 
 Might look like this:
 
-	GIT_AUTHOR_NAME="André Ruffert"
-  GIT_AUTHOR_EMAIL="your@mail.com"
+```
+GIT_AUTHOR_NAME="André Ruffert"
+GIT_AUTHOR_EMAIL="your@mail.com"
 
-  git config --global user.name "$GIT_AUTHOR_NAME"
-  git config --global user.email "$GIT_AUTHOR_EMAIL"
+git config --global user.name "$GIT_AUTHOR_NAME"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
+```
 
 ## License
 

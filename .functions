@@ -9,6 +9,11 @@ function mkd() {
     mkdir -p "$@" && cd "$@"
 }
 
+# A safer alternative to `rm`
+function trash() {
+    mv $1 ~/.Trash
+}
+
 # Start a quick webserver from any directory
 function serve() {
     python -m SimpleHTTPServer ${1:-8080}

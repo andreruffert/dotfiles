@@ -1,4 +1,5 @@
 [alias]
+
     # http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
 
     # diff
@@ -96,35 +97,51 @@
     rmc = "!f() { git rm --cached $1; }; f"
 
 [color]
-    branch = auto
-    diff = auto
-    ui = true
+
+    # Use colors in Git commands that are capable of colored output when
+    # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+    ui = auto
+
+[color "branch"]
+
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+
+    meta = yellow bold
+    frag = magenta bold # line info
+    old = red # deletions
+    new = green # additions
 
 [color "status"]
+
     added = yellow
     changed = green
     untracked = cyan
 
 [format]
+
     pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
 
 [core]
-	editor = subl -n -w
-	excludesfile = ~/.gitignore
+
+    # Use custom `.gitignore` and `.gitattributes`
+    excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
 
 [diff]
-    tool = opendiff
+
+    # Detect copies as well as renames
+    renames = copies
 
 [merge]
-    log = true
-	tool = opendiff
 
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
+    tool = opendiff
+
+[push]
+
+    default = simple

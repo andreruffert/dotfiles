@@ -1,6 +1,6 @@
 # My dotfiles ❤ ~/
 
-![Screenshot of my bash prompt](http://i.imgur.com/W3ai4om.png)
+![Screenshot of my bash prompt](http://i.imgur.com/mqLwep4.png)
 
 ## Installation
 

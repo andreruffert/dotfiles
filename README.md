@@ -11,7 +11,7 @@ git clone https://github.com/andreruffert/dotfiles.git && cd dotfiles && source 
 ## Update
 ```
 cd dotfiles
-source scripts/install.sh
+./scripts/install.sh
 ```
 
 ## Customizations

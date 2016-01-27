@@ -87,6 +87,9 @@
     lb = branch -va
     lr = remote -v
 
+    # View your recently used branches.
+    latest = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+
     # List contributors with number of commits
     contributors = shortlog --summary --numbered
 

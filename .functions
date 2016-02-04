@@ -93,3 +93,7 @@ function caskfile() {
     #head -3 Brewfile
     #echo "..."
 }
+
+function haha() {
+    say -v Hysterical 'hahahhahaahhloolololhhahahahehehehaha'
+}

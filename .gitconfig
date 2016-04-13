@@ -76,6 +76,11 @@
     ##
     drb = "!f() { git push origin :$1; }; f"
 
+    ##
+    # Remove local branches which have already been merged into the current HEAD
+    ##
+    cleanup = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     #l = log --pretty=oneline -n 20 --graph --abbrev-commit
     l = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative

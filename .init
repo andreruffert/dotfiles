@@ -1,0 +1,3 @@
+if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
+	curl -s http://i.giphy.com/ujUdrdpX7Ok5W.gif | term-img
+fi

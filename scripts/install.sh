@@ -5,11 +5,13 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin master;
 
 function doIt() {
-    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "lib" --exclude "ruby" --exclude "scripts" \
-        --exclude "README.md" --exclude "LICENSE" -avh --no-perms ../ ~;
+    rsync --exclude ".git/" \
+          --exclude ".DS_Store" \
+          --exclude "scripts" \
+          --exclude "README.md" \
+          --exclude "LICENSE" \
+          -avh --no-perms ../ ~;
     source ~/.bash_profile;
-
-    source ../ruby/install.sh
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

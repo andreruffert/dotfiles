@@ -51,13 +51,13 @@ function todo() {
     touch ~/Desktop/"$*"
 }
 
-# `s` with no arguments opens the current directory in Sublime Text, otherwise
+# `a` with no arguments opens the current directory in Atom, otherwise
 # opens the given location
-function s() {
+function a() {
     if [ $# -eq 0 ]; then
-        subl .;
+        atom .;
     else
-        subl "$@";
+        atom "$@";
     fi;
 }
 
